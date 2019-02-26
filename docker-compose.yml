@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  web:
+    image: tiangolo/uwsgi-nginx-flask:python3.7
+    volumes:
+    - ./app:/app
+
+  ab:
+    build: ./
+    links:
+    - web
+    environment:
+      TEST_URL: http://web/100
+      TEST_SLEEP: 20
+      TEST_PERIOD: 60
+    volumes:
+    - ./users.list:/app/users.list
+
