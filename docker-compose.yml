@@ -11,9 +11,9 @@ services:
     links:
     - web
     environment:
-      TEST_URL: http://web/100
+      TEST_URL: http://web/20
       TEST_SLEEP: 20
       TEST_PERIOD: 60
     volumes:
-    - ./users.list:/app/users.list
+    - ./test:/app
 
