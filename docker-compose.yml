@@ -11,9 +11,19 @@ services:
     links:
     - web
     environment:
-      TEST_URL: http://web/20
+      TEST_URL: http://web/100
       TEST_SLEEP: 20
       TEST_PERIOD: 60
     volumes:
     - ./test:/app
 
+  cadvisor:
+    image: google/cadvisor:latest
+    volumes:
+    - /:/rootfs:ro
+    - /var/run:/var/run:rw
+    - /sys:/sys:ro
+    - /var/lib/docker:/var/lib/docker:ro
+    ports:
+    - 8080:8080
+    
