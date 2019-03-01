@@ -2,16 +2,30 @@ version: '2'
 
 services:
   web:
-    image: tiangolo/uwsgi-nginx-flask:python3.7
-    volumes:
-    - ./app:/app
+    build:
+      context: ./
+      dockerfile: Dockerfile.web
+    environment:
+      UWSGI_CHEAPER: 1
+      UWSGI_PROCESSES: 2
 
-  ab:
-    build: ./
+  haproxy:
+    image: dockercloud/haproxy:latest
     links:
     - web
+    ports:
+    - 8086:80
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+
+  ab:
+    build:
+      context: ./
+      dockerfile: Dockerfile.ab
+    links:
+    - haproxy
     environment:
-      TEST_URL: http://web/100
+      TEST_URL: http://haproxy/100
       TEST_SLEEP: 20
       TEST_PERIOD: 60
     volumes:
@@ -20,7 +34,7 @@ services:
   cadvisor:
     image: google/cadvisor:latest
     volumes:
-    -  c:\:/rootfs:ro
+    - /../:/rootfs:ro
     - /var/run:/var/run:rw
     - /sys:/sys:ro
     - /var/lib/docker:/var/lib/docker:ro
