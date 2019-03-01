@@ -4,137 +4,91 @@ This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
 
-Benchmarking web (be patient)
+Benchmarking haproxy (be patient)
 
 
 Server Software:        nginx/1.15.8
-Server Hostname:        web
+Server Hostname:        haproxy
 Server Port:            80
 
-Document Path:          /15
-Document Length:        21 bytes
+Document Path:          /100
+Document Length:        115 bytes
 
 Concurrency Level:      100
-Time taken for tests:   25.776 seconds
-Complete requests:      50000
+Time taken for tests:   60.001 seconds
+Complete requests:      41379
 Failed requests:        0
-Keep-Alive requests:    49535
-Total transferred:      9147675 bytes
-HTML transferred:       1050000 bytes
-Requests per second:    1939.80 [#/sec] (mean)
-Time per request:       51.552 [ms] (mean)
-Time per request:       0.516 [ms] (mean, across all concurrent requests)
-Transfer rate:          346.58 [Kbytes/sec] received
+Keep-Alive requests:    41379
+Total transferred:      11503362 bytes
+HTML transferred:       4758585 bytes
+Requests per second:    689.63 [#/sec] (mean)
+Time per request:       145.004 [ms] (mean)
+Time per request:       1.450 [ms] (mean, across all concurrent requests)
+Transfer rate:          187.23 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.6      0      20
-Processing:    12   51  14.3     50     171
-Waiting:        6   51  14.3     50     171
-Total:         12   51  14.3     50     171
+Connect:        0    0   0.7      0      18
+Processing:     9  145  21.9    136     311
+Waiting:        3  145  21.9    136     310
+Total:          9  145  21.8    136     311
 
 Percentage of the requests served within a certain time (ms)
-  50%     50
-  66%     55
-  75%     59
-  80%     61
-  90%     67
-  95%     73
-  98%     84
-  99%    102
- 100%    171 (longest request)
+  50%    136
+  66%    143
+  75%    154
+  80%    162
+  90%    178
+  95%    191
+  98%    199
+  99%    206
+ 100%    311 (longest request)
 
-**** Test 150 Users ****
+**** Test 110 Users ****
 
 This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
 
-Benchmarking web (be patient)
+Benchmarking haproxy (be patient)
 
 
 Server Software:        nginx/1.15.8
-Server Hostname:        web
+Server Hostname:        haproxy
 Server Port:            80
 
-Document Path:          /15
-Document Length:        21 bytes
+Document Path:          /100
+Document Length:        115 bytes
 
-Concurrency Level:      150
-Time taken for tests:   20.535 seconds
+Concurrency Level:      110
+Time taken for tests:   22.971 seconds
 Complete requests:      50000
-Failed requests:        11377
-   (Connect: 0, Receive: 0, Length: 11377, Exceptions: 0)
-Non-2xx responses:      11377
-Keep-Alive requests:    49550
-Total transferred:      10638137 bytes
-HTML transferred:       2597272 bytes
-Requests per second:    2434.82 [#/sec] (mean)
-Time per request:       61.606 [ms] (mean)
-Time per request:       0.411 [ms] (mean, across all concurrent requests)
-Transfer rate:          505.90 [Kbytes/sec] received
+Failed requests:        42734
+   (Connect: 0, Receive: 0, Length: 42734, Exceptions: 0)
+Non-2xx responses:      42734
+Keep-Alive requests:    50000
+Total transferred:      15438424 bytes
+HTML transferred:       7544828 bytes
+Requests per second:    2176.65 [#/sec] (mean)
+Time per request:       50.536 [ms] (mean)
+Time per request:       0.459 [ms] (mean, across all concurrent requests)
+Transfer rate:          656.33 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   1.9      0      41
-Processing:     1   61  39.9     65     788
-Waiting:        0   61  39.9     65     788
-Total:          1   61  40.0     66     789
+Connect:        0    0   0.6      0      21
+Processing:     1   50 121.2      3     666
+Waiting:        1   50 121.2      3     666
+Total:          1   50 121.2      3     666
 
 Percentage of the requests served within a certain time (ms)
-  50%     66
-  66%     77
-  75%     82
-  80%     87
-  90%    100
-  95%    114
-  98%    128
-  99%    141
- 100%    789 (longest request)
-
-**** Test 100 Users ****
-
-This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
-
-Benchmarking web (be patient)
-
-
-Server Software:        nginx/1.15.8
-Server Hostname:        web
-Server Port:            80
-
-Document Path:          /15
-Document Length:        21 bytes
-
-Concurrency Level:      100
-Time taken for tests:   27.181 seconds
-Complete requests:      50000
-Failed requests:        0
-Keep-Alive requests:    49537
-Total transferred:      9147685 bytes
-HTML transferred:       1050000 bytes
-Requests per second:    1839.52 [#/sec] (mean)
-Time per request:       54.362 [ms] (mean)
-Time per request:       0.544 [ms] (mean, across all concurrent requests)
-Transfer rate:          328.66 [Kbytes/sec] received
-
-Connection Times (ms)
-              min  mean[+/-sd] median   max
-Connect:        0    0   0.8      0      22
-Processing:     6   54  14.4     53     216
-Waiting:        2   54  14.4     53     216
-Total:          6   54  14.5     53     216
-
-Percentage of the requests served within a certain time (ms)
-  50%     53
-  66%     58
-  75%     62
-  80%     64
-  90%     71
-  95%     79
-  98%     91
-  99%    102
- 100%    216 (longest request)
+  50%      3
+  66%      3
+  75%      4
+  80%      4
+  90%    269
+  95%    358
+  98%    417
+  99%    510
+ 100%    666 (longest request)
 
